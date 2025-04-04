@@ -115,28 +115,7 @@ def main():
         else:
             print(f"使用现有Docker镜像: {args.image}")
         
-        # 处理单条消息
-        if args.message:
-            print(f"发送消息到Docker沙箱: {args.message}")
-            # 创建事件循环
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
-            
-            # 运行异步函数
-            result = loop.run_until_complete(sandbox.run_interpreter(args.message))
-            loop.close()
-            
-            if result["success"]:
-                if not result.get("stdout"):
-                    print("\n(沙箱执行成功，但没有输出)")
-            else:
-                print("\n--- 执行错误 ---")
-                print(result.get("error", "未知错误"))
-                if result.get("stderr"):
-                    print(result["stderr"])
-        
-        # 交互模式
-        elif args.interactive or not (args.message or args.build):
+        if args.interactive or not (args.message or args.build):
             print("\n=== Docker沙箱中的Open Interpreter交互模式 ===")
             print("输入 'exit' 或 'quit' 退出，按Ctrl+C中断。")
             print("示例命令: '计算1+1'，'帮我画一个圆形'\n")

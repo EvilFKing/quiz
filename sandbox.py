@@ -295,7 +295,19 @@ class DockerSandbox:
             
         返回:
             包含执行结果的字典
-        """        
+        """
+        # 检查容器是否存在并运行
+        if not self.check_container_exists():
+            logger.info("容器未运行，尝试启动新容器...")
+            if not self.start_container():
+                return {
+                    "success": False,
+                    "error": "无法启动Docker容器"
+                }
+            logger.info("等待容器服务就绪...")
+            time.sleep(2)  # 等待服务启动
+        
+        # 发送消息并获取响应
         try:
             response = await self.websocket_client.send_message(message)
             return response
