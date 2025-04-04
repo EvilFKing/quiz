@@ -2,6 +2,7 @@
 # 环境配置
 1. 安装Docker
 2. 安装Python3.11+
+3. 拉取代码到open-interpreter主目录下
 
 # 配置修改方式一
 # 手动修改代码
