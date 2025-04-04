@@ -3,9 +3,13 @@
 1. 安装Docker
 2. 安装Python3.11+
 
+# 配置修改方式一
 # 手动修改代码
 1. 修改interpreter/terminal_interface/profiles/defaults/default.yaml 中的model,api_key,api_base相关配置
 2. 修改interpreter/core/async_core.py中的DEFAULT_HOST地址为0.0.0.0或者在docker容器中配置环境变量INTERPRETER_HOST=0.0.0.0
+# 配置修改方式二
+# http请求修改
+1. http://localhost:8000/settings
 
 ### 注意事项
 1. docker容器中不要禁用网络，否则会导致无法访问到容器内部的服务
