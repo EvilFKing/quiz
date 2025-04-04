@@ -142,5 +142,5 @@ WebSocketClient(
 1. python main.py --interactive
 
 
-# 测试题二：
-1. 
+# 测试题二
+1.根据yaml文件来配置多个llm,并使用websocket连接它们。
