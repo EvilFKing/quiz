@@ -1,13 +1,13 @@
 # 测试题一：
-# 环境配置
+# 本地实现的环境配置
 1. 安装Docker
 2. 安装Python3.11+
 3. 拉取代码到open-interpreter主目录下
 
 # 配置修改方式一
-# 手动修改代码
+# 手动修改代码（当前实现方式）
 1. 修改interpreter/terminal_interface/profiles/defaults/default.yaml 中的model,api_key,api_base相关配置
-2. 修改interpreter/core/async_core.py中的DEFAULT_HOST地址为0.0.0.0或者在docker容器中配置环境变量INTERPRETER_HOST=0.0.0.0
+2. 修改interpreter/core/async_core.py中的DEFAULT_HOST地址为0.0.0.0
 # 配置修改方式二
 # http请求修改
 1. http://localhost:8000/settings
