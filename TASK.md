@@ -7,7 +7,9 @@
 # 配置修改方式一
 # 手动修改代码（当前实现方式）
 1. 修改interpreter/terminal_interface/profiles/defaults/default.yaml 中的model,api_key,api_base相关配置
-2. 修改interpreter/core/async_core.py中的DEFAULT_HOST地址为0.0.0.0
+   ![1](https://github.com/user-attachments/assets/4891d71a-1c9e-4beb-8954-c62c5c39302a)
+
+3. 修改interpreter/core/async_core.py中的DEFAULT_HOST地址为0.0.0.0
 # 配置修改方式二
 # http请求修改
 1. http://localhost:8000/settings
